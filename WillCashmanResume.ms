@@ -1,35 +1,58 @@
-\# Will Resume 2022
-.
-.ds EMAIL wcashman1351@gmail.com
-.ds GITHUB wlcsm
-.ds LINKEDIN cashman-will
-.
+.device papersize=8.5i,11i
+.defcolor pdf:href.colour rgb 0.0 0.0 0.0
 \# 0.5i margin. Create a right margin of 0.5i by subtracting the left margin
 \# plus 0.5i from the width of the entire page.
-.nr PO 0.5i
-.nr HM 0.5i
+\# page offset (left side)
+.nr PO 0.63i
+\# header margin (ms macro pkg)
+.nr HM 0.66i
+\# footer margin
 .nr FM 0.0i
-.nr LL 21c
+\# line length
+.nr LL 8.5i
 .nr LL -\n[PO]
 .nr LL -0.5i
 .
 .
-\# Import the template macros
 .so resume.tmac
+.ds FAM Neuton
 .
-\# Main document starts here
-.title Will Cashman
+.title Andrew Fuller
 .
 .ps 12
 .sp 0.5
 .
-.email
-.github
-.linkedin
+.de link
+.pdfhref W -D \\$1 \\$2
+..
+.ps 11
+\# .fam Neuton
+.link https://github.com/qartis github.com/qartis
+.sp 0
+.link mail:qartis@gmail.com qartis@gmail.com
 .
-.section WORK EXPERIENCE
+.de sectionheading
+.sp 0.6
+.ps 17
+.B
+\\$*
+..
+.
+.sectionheading Brief
+.RS
+My goal is to work with hardware and low level software, creating new and exciting devices for the future. I enjoy creating high-performance systems which are extremely reliable.
+.RE
 .
 .
+.sectionheading Education
+.RS
+.LP
+B.Eng. Computing Engineering, Zhejiang University (2011)
+.LP
+B.Sc. Computing Science, Simon Fraser University (2014)
+.RE
+.sectionheading Experience
+.RS
 .item "TikTok" "Go Software Engineer" "Aug. 2021 - Present" "Shenzhen, CN"
 .list Follow an agile release train to design and develop core CI/CD capabilities for company release platform in Go.
 .list Lead the integration of a competing internal product. Perform system integration, developed interactive cross platform data migration tool, and seeked and resolved user issues.
@@ -48,6 +71,7 @@
 .list Lead tutor for undergraduate algorithms course. Ensured comprehensive learning experience by leading online forum discussions, designed weekly student workshops as well as course assignments.
 .
 .
+.RE
 .section CONFERENCES
 .
 .
@@ -83,22 +107,3 @@
 .
 .list \fBTechnical:\fR Go, Python, JavaScript (NodeJS/React), Docker, MySQL, Git/GitHub, Rust, Latex, GNU Troff, Bash.
 .list \fBLanguages:\fR English - Native, Mandarin - Working proficiency.
-.
-.
-\#.section REFERENCES
-\#.nf
-\#.
-\#\fB\s(12Martin Helmer\fR 
-\#\s(10
-\#Associate Professor of Mathematics
-\#.sp 0.5
-\#\fBRole:\fR Honours Supervisor
-\#\fBEmail:\fR martin.helmer@anu.edu.au
-\#
-\#\fB\s(12Hanna Kurniawati\fR
-\#\s(10
-\#Senior Lecturer of Computer Science
-\#.sp 0.5
-\#\fBEmail:\fR Hanna.Kurniawati@anu.edu.au
-\#.IP \fBRole:\fR 6
-\#Course Convener when demonstrating for Algorithms course

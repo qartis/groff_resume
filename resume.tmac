@@ -1,13 +1,13 @@
-\# A template for Resumes
-\# Will Cashman 2022
-.
-\# Define colours
 .defcolor red rgb #cc3300
 .defcolor grey rgb #595959
+.fam Liberation
 .
 \# Document title
 .de title
-\fB\s(30\\$*
+.ps 20.6
+.fam Liberation
+.B
+\\$*
 .LP
 ..
 .
@@ -22,10 +22,9 @@
 .LP
 .sp 1
 \m[red]\s(14\\$*\m[]
-.fam
 .LP
 .sp -1
-\D'l 7.25i 0'
+\l'7.25i'
 ..
 .
 \# Description of job
@@ -60,22 +59,4 @@
 \s(11\\$*
 .LP
 .sp -0.4
-..
-.
-.de email
-\fBE-mail:
-.pdfhref W -D mail:\*[EMAIL] \*[EMAIL]
-\h'0.1i'
-..
-.
-.de github
-GitHub:
-.pdfhref W -D https://github.com/\*[GITHUB] \*[GITHUB]
-\h'0.1i'
-..
-.
-.de linkedin
-LinkedIn:
-.pdfhref W -D https://www.linkedin.com/in/\*[LINKEDIN]/ Will Cashman
-\h'0.1i'
 ..
