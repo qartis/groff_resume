@@ -1,16 +1,20 @@
 willps:
-	groff -Kutf8 -ms -Tps WillCashmanResume.ms > WillCashmanResume.ps
-	ps2pdf WillCashmanResume.ps
+	groff -Kutf8 -ms -Tps resume.ms > resume.ps
+	ps2pdf resume.ps
 
 willpdf:
-	groff -Kutf8 -ms -Tpdf WillCashmanResume.ms > WillCashmanResume.pdf
+	groff -Kutf8 -ms -Tpdf resume.ms > resume.pdf
 
 testps:
-	groff -Kutf8 -ms -Tps test.ms > WillCashmanResume.ps
-	ps2pdf WillCashmanResume.ps
+	groff -Kutf8 -ms -Tps test.ms > resume.ps
+	ps2pdf resume.ps
 
 testpdf:
-	groff -Kutf8 -ms -Tpdf test.ms > WillCashmanResume.pdf
+	groff -Kutf8 -ms -Tpdf test.ms > resume.pdf
 
-resumepdf:
-	groff -Tpdf resume.ms > WillCashmanResume.pdf
+resume.pdf: resume.ms
+	groff -Tpdf resume.ms > resume.pdf
+
+.PHONY: monitor
+monitor:
+	echo resume.ms | entr -np make --no-print-directory resume.pdf
