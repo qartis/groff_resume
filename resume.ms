@@ -1,3 +1,11 @@
+.de newpage                         \" define macro
+'bp                                 \" begin page
+'sp .5i                             \" vertical space
+.tl 'left top'center top'right top' \" title
+'sp .3i                             \" vertical space
+lol
+..                                  \" end macro
+.wh -1 newpage
 .defcolor pdf:href.colour rgb 0 0 0
 .device papersize=8.5i,11i
 .nh \" no hyphenation
@@ -104,7 +112,7 @@ B.Sc. Computing Science, Simon Fraser University (2014)
 .fl
 .mk Z
 .sp |\\nXu
-\\h'|\nYu'\h'-0.1i'\[bu]
+\\h'|\nY-0.1i'\[bu]
 .fl
 .sp |\\nZu
 ..
