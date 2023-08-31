@@ -8,49 +8,52 @@
 .vs 13p  \" vertical space
 .fp 1 LiberationB
 .fp 2 NeutonR
+.fp 3 MSSongR
 .ds title_pt 20.7
 .ds section_pt 14.4
-.ds body_pt 10.9
-.ds body_pt 11.5
+.ds body_pt 11.7
+.ds bold_ft LiberationB
+.ds body_ft NeutonR
 .
-.de XS
-.  po +2n
+.de XS  \" Start indented section
+.  po +0.22i
 .  ps \*[body_pt]
-.  ft 2
+.  ft \*[body_ft]
 ..
-.de XE
+.de XE  \" End indented section
 .  br \" flush final line before changing margin
-.  po \" restore previous value of page offset (left margin)
+.  po -0.22i
 ..
 .
 .ps \*[title_pt]
-\f1Andrew Fuller
+.ft \*[bold_ft]
+Andrew Fuller
 .
 .
-.sp 0.7
 .
 .de link
 .  ps \*[body_pt]
-.  ft 2
+.  ft \*[body_ft]
 .  pdfhref W -D \\$1 \\$2
 ..
+.sp 0.7
 .link https://github.com/qartis github.com/qartis
+.br
+.link https://blog.qartis.com blog.qartis.com
 .br
 .link mail:qartis@gmail.com qartis@gmail.com
 .
 .de section
-\# .  sp 0.66
-.sp 0.12i
+.  sp 0.12i
 .  ps \*[section_pt]
-\f1\\$*
-\# .  br
-.sp 0.03i
-.  ft 2
+.  ft \*[bold_ft]
+\\$*
+.  sp 0.02i
 ..
 .
 .section Brief
 .XS
-My objective is to work with hardware and low level software, creating new and exciting devices for the future.
+\f3你好\f2 My objective is to work with hardware and low level software, creating new and exciting devices for the future.
 I enjoy building high-performance systems which are extremely reliable.
 .XE
 .
@@ -81,43 +84,48 @@ B.Sc. Computing Science, Simon Fraser University (2014)
 .
 .section Experience
 .de EXPERIENCE
+.  if \\n[EXPERIENCE_DO_ADD_GAP] .sp 0.05i
+.  nr EXPERIENCE_DO_ADD_GAP 1
 .  br
-.  mk  \" mark the vertical baseline location
-.  lj  \" make sure we're left justifying
+.  mk   \" mark the vertical baseline location
+.  lj   \" make sure we're left justifying
 \f1\\$1 \" put the left side text
-.  br  \" explicitly break to output the left side text
-.  rt  \" NOW we return to the same vertical position that we marked
+.  br   \" explicitly break to output the left side text
+.  rt   \" NOW we return to the same vertical position that we marked
 .  rj 1 \" right justify the next 1 lines
 \f2\\$3 \" output the right-justified text
 \f2\\$2 \" output the second line of text on the left side
-.br
+.  br
+..
+.de ITEM
+.  br
+\[bu] \\$*
 ..
 .XS
 .EXPERIENCE "Waymo LLC" "Senior Hardware Engineer, Failure Analysis Lead" "Feb 2017 - Present"
-\[bu] Set up CMs, tester design and maintenance, led hardware failure analysis team
-\[bu] Manufacturing testbed design, implementation, maintenance, and repair
-\[bu] Test development, Python & C++
-\[bu] Equipment interface board design & drivers
-\[bu] Contract manufacturer interfacing (US and Asia)
-\[bu] Remote MFG line site reliability oncall support
-\[bu] Corp networking, IDF maintenance, datacenter rack&stack
-\[bu] Engineering lab design, implementation, & management
+.ITEM Set up CMs, tester design and maintenance, led hardware failure analysis team
+.ITEM Manufacturing testbed design, implementation, maintenance, and repair
+.ITEM Test development in Python & C++: flashing stations, board functional testers, HIL test fixtures
+.ITEM CAD for prototype test fixtures (Onshape)
+.ITEM Equipment interface board design & drivers
+.ITEM Contract manufacturer interfacing (US and Asia)
+.ITEM Remote MFG line site reliability oncall support
+.ITEM Corp networking, IDF maintenance, datacenter rack&stack
+.ITEM Engineering lab design, implementation, & management
 .
-.sp 0.05i
-.EXPERIENCE "Google Inc. (Google Fiber)" "Hardware Engineer" "Aug 2016 - Feb 2017"
-\[bu] Hardware lead for ethernet-over-coax project for apartments, with G.Hn and MoCA variants (schematic, board bring-up)
-\[bu] Project lead for 2nd gen Google Fiber TV remote control (design, sourcing, schematic, layout, bringup, bluetooth drivers)
-\[bu] Implemented 1:64 DWDM wavelength coordination routine for faster deployment with GPON 
-\[bu] Implemented tech demo for last-mile network deployment via circular polarization and high-gain RF couplers
-\[bu] Worked on rapid neighborhood deployment via "leaky feeder" and GoubauSommerfeld cable deployment
+.EXPERIENCE "Google Inc." "Hardware Engineer (Google Fiber)" "Aug 2016 - Feb 2017"
+.ITEM Hardware lead for ethernet-over-coax project for apartments, with G.hn and MoCA variants (schematic, board bring-up)
+.ITEM Project lead for 2nd gen Google Fiber TV remote control (design, sourcing, schematic, layout, bringup, bluetooth drivers)
+.ITEM Implemented 1:64 DWDM wavelength coordination routine for faster deployment with GPON 
+.ITEM Implemented tech demo for last-mile network deployment via circular polarization and high-gain RF couplers
+.ITEM Worked on rapid neighborhood deployment via "leaky feeder" and Goubau-line cable
+.ITEM Cadence Concept and OrCAD for schematic capture
 .
-.sp 0.05i
-.EXPERIENCE "Google Inc. (Google Fiber)" "Embedded Software Engineer" "Mar 2015 - Aug 2016"
-\[bu] Worked on Uboot drivers, wrote board support packages for board smoke tests and bringup
-\[bu] Ported system software components from Python to C
-\[bu] Built tech demo for low-latency cloud gaming service
+.EXPERIENCE "Google Inc." "Embedded Software Engineer (Google Fiber)" "Mar 2015 - Aug 2016"
+.ITEM Worked on Uboot drivers, wrote board support packages for board smoke tests and bringup
+.ITEM Ported system software components from Python to C
+.ITEM Built tech demo for low-latency cloud gaming service
 .
-.sp 0.05i
 .EXPERIENCE "Fortinet Technologies Inc." "Embedded Software Engineer" "Jan 2014 - Mar 2015"
-\[bu] Worked on Fortigate and Fortimanager, C-based platform running on Linux 
+.ITEM Worked on Fortigate and Fortimanager, C-based platform running on Linux 
 .XE

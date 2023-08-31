@@ -13,7 +13,7 @@ testpdf:
 	groff -Kutf8 -ms -Tpdf test.ms > resume.pdf
 
 resume.pdf: resume.ms
-	groff -Tpdf resume.ms > resume.pdf
+	groff -Kutf8 -Tpdf resume.ms > resume.pdf
 
 .PHONY: monitor
 monitor:
