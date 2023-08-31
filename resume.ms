@@ -8,7 +8,6 @@
 .vs 13p  \" vertical space
 .fp 1 LiberationB
 .fp 2 NeutonR
-.fp 3 MSSongR
 .ds title_pt 20.7
 .ds section_pt 14.4
 .ds body_pt 11.7
@@ -53,7 +52,7 @@ Andrew Fuller
 .
 .section Brief
 .XS
-\f3你好\f2 My objective is to work with hardware and low level software, creating new and exciting devices for the future.
+My objective is to work with hardware and low level software, creating new and exciting devices for the future.
 I enjoy building high-performance systems which are extremely reliable.
 .XE
 .
@@ -96,13 +95,23 @@ B.Sc. Computing Science, Simon Fraser University (2014)
 \f2\\$3 \" output the right-justified text
 \f2\\$2 \" output the second line of text on the left side
 .  br
+.  sp 0.04i
 ..
 .de ITEM
 .  br
-\[bu] \\$*
+.mk X
+\\kY\\$*
+.fl
+.mk Z
+.sp |\\nXu
+\\h'|\nYu'\h'-0.1i'\[bu]
+.fl
+.sp |\\nZu
 ..
 .XS
 .EXPERIENCE "Waymo LLC" "Senior Hardware Engineer, Failure Analysis Lead" "Feb 2017 - Present"
+.ITEM Founding member of Production Test Engineering team, responsible for all hardware testers and factory test activities after EVT phase
+.ITEM Responsible for MES/Shop Floor interfacing for all CM sites
 .ITEM Set up CMs, tester design and maintenance, led hardware failure analysis team
 .ITEM Manufacturing testbed design, implementation, maintenance, and repair
 .ITEM Test development in Python & C++: flashing stations, board functional testers, HIL test fixtures
@@ -116,9 +125,9 @@ B.Sc. Computing Science, Simon Fraser University (2014)
 .EXPERIENCE "Google Inc." "Hardware Engineer (Google Fiber)" "Aug 2016 - Feb 2017"
 .ITEM Hardware lead for ethernet-over-coax project for apartments, with G.hn and MoCA variants (schematic, board bring-up)
 .ITEM Project lead for 2nd gen Google Fiber TV remote control (design, sourcing, schematic, layout, bringup, bluetooth drivers)
-.ITEM Implemented 1:64 DWDM wavelength coordination routine for faster deployment with GPON 
+.ITEM Implemented 64-channel DWDM wavelength coordination routine for faster deployment with GPON 
 .ITEM Implemented tech demo for last-mile network deployment via circular polarization and high-gain RF couplers
-.ITEM Worked on rapid neighborhood deployment via "leaky feeder" and Goubau-line cable
+.ITEM Worked on rapid neighborhood deployment via \[lq]leaky feeder\[rq] and Goubau-line cable
 .ITEM Cadence Concept and OrCAD for schematic capture
 .
 .EXPERIENCE "Google Inc." "Embedded Software Engineer (Google Fiber)" "Mar 2015 - Aug 2016"
