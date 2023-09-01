@@ -1,2 +1,0 @@
-.ft LiberationSerif
-hello world
