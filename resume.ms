@@ -8,31 +8,31 @@
 .vs 13p  \" vertical space
 .fp 1 LiberationB
 .fp 2 NeutonR
-.ds title_pt 20.7
-.ds section_pt 14.4
-.ds body_pt 11.7
-.ds bold_ft LiberationB
-.ds body_ft NeutonR
+.ds TITLE_PT 20.7
+.ds SECTION_PT 14.4
+.ds BODY_PT 11.7
+.ds TITLE_FT LiberationB
+.ds BODY_FT NeutonR
 .
 .de XS  \" Start indented section
 .  po +0.22i
-.  ps \*[body_pt]
-.  ft \*[body_ft]
+.  ps \*[BODY_PT]
+.  ft \*[BODY_FT]
 ..
 .de XE  \" End indented section
 .  br \" flush final line before changing margin
 .  po -0.22i
 ..
 .
-.ps \*[title_pt]
-.ft \*[bold_ft]
+.ps \*[TITLE_PT]
+.ft \*[TITLE_FT]
 Andrew Fuller
 .
 .
 .
 .de link
-.  ps \*[body_pt]
-.  ft \*[body_ft]
+.  ps \*[BODY_PT]
+.  ft \*[BODY_FT]
 .  pdfhref W -D \\$1 \\$2
 ..
 .sp 0.7
@@ -42,22 +42,22 @@ Andrew Fuller
 .br
 .link mail:qartis@gmail.com qartis@gmail.com
 .
-.de section
+.de SECTION
 .  sp 0.12i
-.  ps \*[section_pt]
-.  ft \*[bold_ft]
+.  ps \*[SECTION_PT]
+.  ft \*[TITLE_FT]
 \\$*
-.  sp 0.02i
+.  sp 0.01i
 ..
 .
-.section Brief
+.SECTION Brief
 .XS
 My objective is to work with hardware and low level software, creating new and exciting devices for the future.
 I enjoy building high-performance systems which are extremely reliable.
 .XE
 .
 .
-.section Projects
+.SECTION Projects
 .de PROJECT
 \f1\\$1 \f2\\$2 \" font 1 is title font, font P is previous font
 .  br
@@ -73,7 +73,7 @@ Magnetic tape head (analog), MSR-202 credit card writer (USB), custom software.
 .XE
 .
 .
-.section Education
+.SECTION Education
 .XS
 B.Eng. Computing Engineering, Zhejiang University (2011)
 .br
@@ -81,7 +81,8 @@ B.Sc. Computing Science, Simon Fraser University (2014)
 .XE
 .
 .
-.section Experience
+.SECTION Experience
+.sp 0.02i
 .de EXPERIENCE
 .  if \\n[EXPERIENCE_DO_ADD_GAP] .sp 0.05i
 .  nr EXPERIENCE_DO_ADD_GAP 1
@@ -102,11 +103,11 @@ B.Sc. Computing Science, Simon Fraser University (2014)
 .fl
 ..
 .XS
-.EXPERIENCE "Waymo LLC" "Senior Hardware Engineer, Failure Analysis Lead" "Feb 2017 - Present"
+.EXPERIENCE "Waymo LLC" "Senior Hardware Engineer" "Feb 2017 - Present"
 .ITEM Founding member of Production Test Engineering team, responsible for all hardware testers and factory test activities after EVT phase
-.ITEM Manufacturing testbed design, implementation and repair
-.ITEM Test dev. in Python & C++: flashing stations, board functional testers, HIL test fixtures, test equipment drivers
 .ITEM Led hardware failure analysis team which handles root cause analysis, RMA/rework and repair processing
+.ITEM Test dev. in Python & C++: flashing stations, board functional testers, HIL test fixtures, test equipment drivers
+.ITEM Lidar manufacturing testbed design, implementation and repair
 .ITEM Responsible for interface between local MES/Shop Floor system and test equipment at all CM sites (forced routing, genealogy, statistical process control)
 .ITEM CAD for prototype test fixtures (Onshape), schematics and layout for interface boards (Altium)
 .ITEM Remote manufacturing line oncall support/SRE
